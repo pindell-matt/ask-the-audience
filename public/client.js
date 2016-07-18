@@ -18,6 +18,10 @@ socket.on('voteCount', function (votes) {
   console.log(votes);
 });
 
+socket.on('userVote', function (message) {
+  statusMessage.innerText = 'Vote for ' + message + ' recieved!';
+});
+
 var buttons = document.querySelectorAll('#choices button');
 
 for (var i = 0; i < buttons.length; i++) {
