@@ -12,6 +12,10 @@ socket.on('statusMessage', function (message) {
   statusMessage.innerText = message;
 });
 
+socket.on('voteCount', function (votes) {
+  console.log(votes);
+});
+
 var buttons = document.querySelectorAll('#choices button');
 
 for (var i = 0; i < buttons.length; i++) {
