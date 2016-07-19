@@ -32,7 +32,6 @@ io.on('connection', function (socket) {
     if (channel === 'voteCast') {
       votes[socket.id] = message;
       socket.emit('userVote', message);
-
       socket.emit('voteCount', countVotes(votes));
     }
   });
@@ -45,6 +44,7 @@ io.on('connection', function (socket) {
   });
 });
 
+// refactor
 function countVotes(votes) {
   var voteCount = {
     A: 0,
